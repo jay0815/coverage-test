@@ -3,7 +3,9 @@
 
 [![codecov](https://codecov.io/gh/jay0815/coverage-test/branch/master/graph/badge.svg)](https://codecov.io/gh/jay0815/coverage-test)
 
-### Feature
+[中文 README](./README-zh_CN.md)
+
+### Features
 
 * support __ES6__
   * has integrated __babel__
