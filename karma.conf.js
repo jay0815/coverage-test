@@ -8,6 +8,9 @@ module.exports = function (config) {
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
+    // frameworks to use
+    // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
+    frameworks: ['mocha', 'chai'],
     // list of files / patterns to load in the browser
     files: [
       'src/*.js',
@@ -15,21 +18,15 @@ module.exports = function (config) {
     ],
     // list of files / patterns to exclude
     exclude: [
-      "coverage",
       "node_modules"
     ],
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'src/*.js': ['webpack'],
-      'test/*.js': ['webpack'],
+      'src/**/*.js': ['webpack'],
+      'test/**/*.js': ['webpack']
     },
-
-    // frameworks to use
-    // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha', 'chai'],
-
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
@@ -64,10 +61,12 @@ module.exports = function (config) {
     browsers: ['Chrome'],
 
     plugins: [
-      'karma-mocha', 'karma-chai',
-      'karma-mocha-reporter', 'karma-coverage-istanbul-reporter',
-      'karma-webpack',
+      'karma-mocha',
+      'karma-chai',
       'karma-chrome-launcher',
+      'karma-webpack',
+      'karma-coverage-istanbul-reporter',
+      'karma-mocha-reporter'
     ],
 
     coverageIstanbulReporter: {

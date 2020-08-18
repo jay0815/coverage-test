@@ -11,8 +11,8 @@
   },
   "scripts": {
     "coverage": "karma start ./karma.conf.js",
-    "report": "webpack-dev-server --config webpack.config.js",
-    "codecov": "export CODECOV_TOKEN=84122ce8-61b9-4969-978c-cc7c4de48e9e && ./node_modules/.bin/codecov"
+    "reporting": "webpack-dev-server --config webpack.config.js",
+    "codecov": "export CODECOV_TOKEN=84122ce8-61b9-4969-978c-cc7c4de48e9e && codecov"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",
@@ -24,7 +24,6 @@
     "karma": "^5.1.1",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^3.1.0",
-    "karma-coverage": "^2.0.3",
     "karma-coverage-istanbul-reporter": "^3.0.3",
     "karma-mocha": "^2.0.1",
     "karma-mocha-reporter": "^2.2.5",
