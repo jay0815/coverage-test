@@ -2,9 +2,21 @@ const path = require('path');
 
 module.exports = (env = {}, argv) => {
 
+  const isProduction = !!env.production;
+
+  const mode = isProduction ? 'production' : 'development';
+
+  const devtool =  isProduction ? 'nosources-source-map' : 'source-map';
+
   const config = {
-    mode: 'development',
-    devtool: 'source-map',
+    mode: mode,
+    devtool: devtool,
+    entry: './src/index.js',
+    output: {
+      filename: 'bundle.js',
+      publicPath: '/',
+      path: path.resolve(__dirname, 'dist'),
+    },
     devServer: {
       contentBase: path.join(__dirname, 'coverage/lcov-report'),
       hot: true,

@@ -12,7 +12,8 @@
   "scripts": {
     "coverage": "karma start ./karma.conf.js",
     "reporting": "webpack-dev-server --config webpack.config.js",
-    "codecov": "export CODECOV_TOKEN=84122ce8-61b9-4969-978c-cc7c4de48e9e && codecov"
+    "codecov": "export CODECOV_TOKEN=84122ce8-61b9-4969-978c-cc7c4de48e9e && codecov",
+    "build": "webpack --env.production --config webpack.config.js"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",
