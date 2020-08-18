@@ -2,7 +2,7 @@
 > A base test suit by karam
 
 [![codecov](https://codecov.io/gh/jay0815/coverage-test/branch/master/graph/badge.svg)](https://codecov.io/gh/jay0815/coverage-test)
-![github-action-image](https://github.com/jay0815/coverage-test/workflows/CI/badge.svg)
+[![github-action-image](https://github.com/jay0815/coverage-test/workflows/CI/badge.svg)](https://codecov.io/gh/jay0815/coverage-test)
 
 [中文 README](./README-zh_CN.md)
 
