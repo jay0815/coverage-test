@@ -10,27 +10,23 @@
     "url": "git+https://github.com/jay0815/coverage-test.git"
   },
   "scripts": {
-    "coverage": "karma start ./karma.conf.js",
-    "reporting": "webpack-dev-server --config webpack.config.js",
-    "codecov": "export CODECOV_TOKEN=84122ce8-61b9-4969-978c-cc7c4de48e9e && codecov"
+    "test": "karma start ./karma.conf.js"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",
     "@babel/preset-env": "^7.11.0",
-    "babel-loader": "^8.1.0",
     "babel-plugin-istanbul": "^6.0.0",
+    "babelify": "^10.0.0",
+    "browserify": "^16.5.2",
     "chai": "^4.2.0",
-    "codecov": "^3.7.2",
     "karma": "^5.1.1",
+    "karma-browserify": "^7.0.0",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^3.1.0",
     "karma-coverage-istanbul-reporter": "^3.0.3",
     "karma-mocha": "^2.0.1",
     "karma-mocha-reporter": "^2.2.5",
-    "karma-webpack": "^4.0.2",
     "mocha": "^8.1.1",
-    "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
+    "watchify": "^3.11.1"
   }
 }

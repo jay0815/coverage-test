@@ -1,47 +1,52 @@
 // Karma configuration
-// Generated on Mon Aug 10 2020 15:03:39 GMT+0800 (China Standard Time)
+// Generated on Mon Aug 17 2020 13:09:49 GMT+0800 (China Standard Time)
 const path = require('path');
-const webpack = require('./webpack.config.js');
 
 module.exports = function (config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',
+
+
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha', 'chai'],
+    frameworks: ['mocha', 'chai', 'browserify'],
+
     // list of files / patterns to load in the browser
     files: [
-      'src/*.js',
-      'test/*.js',
+      // 'src/**/*.js',
+      'test/**/*.js'
     ],
+
+
     // list of files / patterns to exclude
-    exclude: [
-      "node_modules"
-    ],
+    exclude: [],
+
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'src/**/*.js': ['webpack'],
-      'test/**/*.js': ['webpack']
+      'src/**/*.js': ['browserify'],
+      'test/**/*.js': ['browserify']
     },
+
+    browserify: {
+      debug: true,
+      transform: [
+        ['babelify']
+      ]
+    },
+
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
     reporters: ['mocha', 'coverage-istanbul'],
 
-    webpack: webpack(),
-
-    webpackMiddleware: {
-      // webpack-dev-middleware configuration
-      // i. e.
-      stats: 'errors-only',
-    },
 
     // web server port
     port: 9876,
+
 
     // enable / disable colors in the output (reporters and logs)
     colors: true,
@@ -64,9 +69,9 @@ module.exports = function (config) {
       'karma-mocha',
       'karma-chai',
       'karma-chrome-launcher',
-      'karma-webpack',
+      'karma-browserify',
       'karma-coverage-istanbul-reporter',
-      'karma-mocha-reporter'
+      'karma-mocha-reporter',
     ],
 
     coverageIstanbulReporter: {
@@ -93,6 +98,8 @@ module.exports = function (config) {
       },
 
     },
+
+
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: false,
